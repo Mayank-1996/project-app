@@ -1,8 +1,8 @@
-import Header from "../shared/components/Header/Header";
+import HomePage from "../views/HomePage/HomePage";
 
 export const routes = [
   {
     path: "/",
-    Component: Header,
+    Component: HomePage,
   },
 ];
