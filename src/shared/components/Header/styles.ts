@@ -44,17 +44,21 @@ export const RightHeaderContainerText = styled.p`
   padding: ${BASE_HIEGHT}px 0;
   margin: 0;
 `;
-
-export const SearchBox = styled.input`
+export const SearchBox = styled.div`
   background-color: ${MatteWhite};
+  margin: 0;
   width: 70%;
   background-color: white;
   font-size: ${1.5 * BASE_FONT_SIZE}px;
   height: ${5 * BASE_HIEGHT}px;
-  outline: none;
-
-  &:focus {
-    border-bottom: 4px solid blue;
-    transition: border-width 2s ease-in-out;
+  &.focused {
+    border-bottom: 2px solid #0066cc;
+    transition: border-bottom border 3s smooth;
   }
+`;
+
+export const Input = styled.input`
+  width: 90%;
+  outline: none;
+  border: 0;
 `;
