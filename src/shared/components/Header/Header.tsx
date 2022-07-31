@@ -4,15 +4,19 @@ import {
   LeftHeaderContainer,
   RightHeaderContainer,
   RightHeaderContainerText,
-  HeaderLogo,
+  LogoContainer,
 } from "./styles";
+import Logo from "./Assets/Logo";
 
 const Header = () => {
   return (
     <HeaderContainer>
       <LeftHeaderContainer>
-        <HeaderLogo src="../Header/Assets/Untitled-1.svg"></HeaderLogo>
-        <SearchBox></SearchBox>
+        <LogoContainer>
+          <Logo width="70" height="70" />
+        </LogoContainer>
+
+        <SearchBox />
       </LeftHeaderContainer>
       <RightHeaderContainer>
         <RightHeaderContainerText>TEXT</RightHeaderContainerText>
