@@ -4,7 +4,7 @@ import {
   BASE_WIDTH,
   BASE_FONT_SIZE,
 } from "../../constants/styles.constants";
-import { MatteBlack, MatteWhite } from "../../constants/styles.colors";
+import { MatteBlack, surfaceColor } from "../../constants/styles.colors";
 
 export const HeaderContainer = styled.div`
   background-color: ${MatteBlack};
@@ -44,21 +44,39 @@ export const RightHeaderContainerText = styled.p`
   padding: ${BASE_HIEGHT}px 0;
   margin: 0;
 `;
-export const SearchBox = styled.div`
-  background-color: ${MatteWhite};
+export const SearchBox = styled.div<{ isFocused: boolean }>`
+  display: flex;
+  justify-content: space-between;
+  background-color: #dcdedc;
   margin: 0;
   width: 70%;
-  background-color: white;
-  font-size: ${1.5 * BASE_FONT_SIZE}px;
-  height: ${5 * BASE_HIEGHT}px;
-  &.focused {
-    border-bottom: 2px solid #0066cc;
-    transition: border-bottom border 3s smooth;
-  }
+  height: fit-content;
+  ${({ isFocused }) => {
+    if (isFocused) return ` background-color: ${surfaceColor};`;
+  }}
 `;
 
-export const Input = styled.input`
-  width: 90%;
+export const Input = styled.input<{ isFocused: boolean }>`
+  background-color: #dcdedc;
+  width: 80%;
+  height: ${5 * BASE_HIEGHT}px;
   outline: none;
   border: 0;
+  font-size: 20px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  ${({ isFocused }) => {
+    if (isFocused) return ` background-color: ${surfaceColor};`;
+  }}
+`;
+export const ClearIcon = styled.span`
+  position: relative;
+  height: 20px;
+  right: 20px;
+  top: 10px;
+  padding: 2px;
+  cursor: pointer;
+  &:hover {
+    background-color: #dcdedc;
+    border-radius: 4px;
+  }
 `;
